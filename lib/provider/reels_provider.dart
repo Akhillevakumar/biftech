@@ -49,7 +49,7 @@ class ReelsProvider extends ChangeNotifier {
   Future<void> loadComments(int idx) async {
     final list = await _dbHelper.getComments(idx);
     if (idx == 0 && _commentsCache[0]!.isNotEmpty && list.isEmpty) {
-      // keep seeded dummy
+      // keeping seeded dummy
       return;
     }
     _commentsCache[idx] = list;
